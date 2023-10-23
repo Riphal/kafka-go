@@ -293,7 +293,7 @@ jobs:
         KAFKA_ALLOW_EVERYONE_IF_NO_ACL_FOUND: 'true'
     steps: *steps
 
-kafka-311:
+  kafka-311:
     working_directory: *working_directory
     environment:
       KAFKA_VERSION: "3.1.1"
