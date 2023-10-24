@@ -315,6 +315,7 @@ jobs:
       - "9092:9092"
       - "9101:9101"
       environment:
+        ALLOW_PLAINTEXT_LISTENER: 'yes'
         KAFKA_CFG_NODE_ID: 0
         KAFKA_CFG_PROCESS_ROLES: controller,broker
         KAFKA_CFG_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
