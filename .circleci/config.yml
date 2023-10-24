@@ -310,7 +310,7 @@ jobs:
       KAFKA_SKIP_NETTEST: "1"
     docker:
     - image: circleci/golang
-    - image: confluentinc/cp-zookeeper:7.1.1
+    - image: wurstmeister/zookeeper
       ports:
       - 2181:2181
     - image: confluentinc/cp-kafka:7.1.1
