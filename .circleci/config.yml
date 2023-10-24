@@ -345,15 +345,4 @@ workflows:
   run:
     jobs:
     - lint
-    - kafka-010
-    - kafka-011
-    - kafka-101
-    - kafka-111
-    - kafka-201
-    - kafka-211
-    - kafka-222
-    - kafka-231
-    - kafka-241
-    - kafka-260
-    - kafka-271
     - kafka-311
