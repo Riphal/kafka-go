@@ -322,8 +322,6 @@ jobs:
         KAFKA_AUTHORIZER_CLASS_NAME: 'kafka.security.authorizer.AclAuthorizer'
         KAFKA_ALLOW_EVERYONE_IF_NO_ACL_FOUND: 'true'
         KAFKA_BROKER_ID: '1'
-        KAFKA_ADVERTISED_HOST_NAME: 'localhost'
-        KAFKA_ADVERTISED_PORT: '9092'
         KAFKA_ZOOKEEPER_CONNECT: 'localhost:2181'
         KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
         KAFKA_MESSAGE_MAX_BYTES: '200000000'
