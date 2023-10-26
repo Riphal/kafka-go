@@ -22,7 +22,7 @@ assignees: ''
 
 ```yaml
 ---
-# docker-compose.yaml
+# kafka-compose.yaml
 #
 # Adding a docker-compose file will help the maintainers setup the environment
 # to reproduce the issue.
