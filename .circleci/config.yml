@@ -312,7 +312,8 @@ jobs:
     - image: circleci/golang
     - image: bitnami/kafka:3.2
       ports:
-      - "9092:9092"
+        - "9092:9092"
+        - "9093:9093"
       environment:
         - ALLOW_PLAINTEXT_LISTENER=yes
         # KRaft settings
