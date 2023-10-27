@@ -312,12 +312,13 @@ jobs:
     - image: circleci/golang
     - image: bitnami/kafka:3.2
       ports:
-        - "9092:9092"
+        - 9092:9092
+        - 9093:9093
       environment:
         - ALLOW_PLAINTEXT_LISTENER=yes
         # KRaft settings
-        - KAFKA_CFG_NODE_ID=0
         - KAFKA_BROKER_ID=0
+        - KAFKA_CFG_NODE_ID=0
         - KAFKA_CFG_PROCESS_ROLES=controller,broker
         - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@localhost:9093
         # Listeners
@@ -326,9 +327,12 @@ jobs:
         - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
         - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
         - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT
-        - KAFKA_CREATE_TOPICS=test-writer-0:3:1,test-writer-1:3:1
-        - KAFKA_DELETE_TOPIC_ENABLE=true
+        - KAFKA_CFG_CREATE_TOPICS=test-writer-0:3:1,test-writer-1:3:1
+        - KAFKA_CFG_DELETE_TOPIC_ENABLE=true
         - KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true
+        - KAFKA_CFG_AUTHORIZER_CLASS_NAME=kafka.security.authorizer.AclAuthorizer
+        - KAFKA_CFG_ALLOW_EVERYONE_IF_NO_ACL_FOUND=true
+        - KAFKA_CFG_MESSAGE_MAX_BYTES=200000000
     steps: *steps
 
 workflows:
